@@ -75,11 +75,11 @@
       .extended-slot .pointer-left{right:calc(100% + 2px)}
       .extended-slot .pointer-right{left:calc(100% + 2px)}
     }
-    .extended-slot .extended-results{animation:results-button-glow 3.8s ease-in-out infinite}
-    .extended-slot .extended-results::before{background-image:linear-gradient(110deg,transparent 36%,#e9fffb3d 49%,transparent 62%);background-size:250% 100%;animation:results-button-shine 3.8s ease-in-out infinite}
+    .extended-slot .extended-results{animation:results-button-glow 1.3s ease-in-out infinite}
+    .extended-slot .extended-results::before{background-image:linear-gradient(110deg,transparent 36%,#e9fffb3d 49%,transparent 62%);background-size:250% 100%;animation:results-button-shine 1.3s ease-in-out infinite}
     .extended-slot .extended-results:hover,.extended-slot .extended-results:focus-visible{animation:none;transform:translateY(-2px);box-shadow:0 8px 24px #0a55735c,inset 0 1px 0 #ffffff42}
     .extended-slot .extended-results:hover::before,.extended-slot .extended-results:focus-visible::before{animation:none;background-position:0 0}
-    .extended-slot .pointer-left,.extended-slot .pointer-right{animation:results-arrow-nudge 3.8s ease-in-out infinite}
+    .extended-slot .pointer-left,.extended-slot .pointer-right{animation:results-arrow-nudge 1.3s ease-in-out infinite}
     .extended-slot .pointer-left{--nudge:3px}.extended-slot .pointer-right{--nudge:-3px}
     .extended-slot .results-pointer path,.extended-slot .pointer-right path{animation:none;opacity:.9}
     @keyframes results-button-glow{0%,62%,100%{box-shadow:0 4px 12px #0a557344,inset 0 1px 0 #ffffff32}27%{box-shadow:0 5px 19px #117b7966,inset 0 1px 0 #ffffff50}}
@@ -100,16 +100,11 @@
       0%,65%,100%{transform:scale(1);box-shadow:0 4px 12px #0a557344,inset 0 1px 0 #ffffff32}
       27%{transform:scale(1.045);box-shadow:0 7px 24px #087e8673,0 0 0 5px #2ad1ae27,inset 0 1px 0 #ffffff65}
     }
-    @media(max-width:700px){
-      .topbar .extended-slot{margin-inline:19px}
-      .extended-slot .results-pointer svg{width:17px;height:12px}
-      .extended-slot .pointer-left{--nudge:3px}.extended-slot .pointer-right{--nudge:-3px}
-    }
     @media(prefers-reduced-motion:reduce){.extended-slot .extended-results:hover,.extended-slot .extended-results:focus-visible{transform:none}}
   </style>
 </head>
 <body>
-<header class="topbar"><div class="container"><a class="brand" href="#top"><span class="brand-icon" aria-hidden="true">♫</span> MVA-SWI</a><nav class="nav" aria-label="Main navigation"><a href="#problem">Problem</a><a href="#method">Method</a><a href="#results">Results</a><a href="#demo">Demo</a></nav><div class="extended-slot"><a class="extended-results" href="assets/extended_results.pdf" target="_blank" rel="noopener" aria-label="Extended Results, additional analyses (PDF, opens in a new tab)"><span class="results-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5h7l4.5 4.5v12.5H6zM13 3.5V8h4.5M9 16v-2m3 2v-4m3 4v-6"/></svg></span><span class="results-copy"><span class="results-title">Extended Results</span><span class="results-subtitle">Click me · PDF</span></span><span class="results-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 12 4M5 4h7v7"/></svg></span></a><span class="results-pointer" aria-hidden="true"><svg class="pointer-left" viewBox="0 0 32 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h27m-6-5 6 5-6 5"/></svg><svg class="pointer-right" viewBox="0 0 32 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M30 7H3m6-5L3 7l6 5"/></svg></span></div></div></header>
+<header class="topbar"><div class="container"><a class="brand" href="#top"><span class="brand-icon" aria-hidden="true">♫</span> MVA-SWI</a><nav class="nav" aria-label="Main navigation"><a href="#problem">Problem</a><a href="#method">Method</a><a href="#results">Results</a><a href="#demo">Demo</a></nav><div class="extended-slot"><a class="extended-results" href="assets/extended_results.pdf" target="_blank" rel="noopener" aria-label="Extended Results, additional analyses (PDF, opens in a new tab)"><span class="results-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5h7l4.5 4.5v12.5H6zM13 3.5V8h4.5M9 16v-2m3 2v-4m3 4v-6"/></svg></span><span class="results-copy"><span class="results-title">Extended Results</span><span class="results-subtitle">Click me · PDF</span></span><span class="results-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 12 4M5 4h7v7"/></svg></span></a></div></div></header>
 <main id="top">
   <section class="hero"><div class="container"><p class="eyebrow">Symbolic music · evaluation · work-level isolation</p><h1>Beyond <em>File-Level Splits</em><br>Rethinking Symbolic Music Evaluation via Multi-View Alignment</h1><p class="sub">Different MIDI files can contain the same musical work. We identify those relations, isolate training content at the work level, and measure how much prior exposure changes evaluation.</p><div class="actions"><a class="pill" href="https://github.com/kunbai05-nb/LeakageBench-MIDI" target="_blank" rel="noopener">↗ &nbsp; Code</a><a class="pill" href="#demo">▶ &nbsp; Watch demo</a></div><div id="demo" class="hero-demo"><div class="video-wrap"><video controls preload="metadata" playsinline aria-label="MVA-SWI detector application demonstration"><source src="assets/demo.mp4" type="video/mp4">Your browser does not support embedded video.</video></div></div></div></section>
   <div class="quickfacts"><div class="container facts"><div class="fact"><strong>30.16%</strong><span>relative NLL reduction for MIDI-GPT under same-work exposure</span></div><div class="fact"><strong>0.45%</strong><span>ATEPP MIDI-GPT deviation from label-isolated reference after MVA-SWI isolation</span></div><div class="fact"><strong>98.91%</strong><span>clean tokens retained in the ATEPP downstream study</span></div></div></div>
