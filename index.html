@@ -24,11 +24,11 @@
     @media(max-width:800px){.nav{gap:13px}.nav a{font-size:12px}.hero{padding:70px 0 55px}.split,.split.reverse{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,1fr)}.result-head{display:block}.result-head p{margin-top:7px}.chart-grid{grid-template-columns:1fr}.fact{padding:22px 8px}.fact strong{font-size:27px}}
     @media(max-width:560px){.container{padding:0 18px}.nav a:nth-child(-n+2){display:none}.topbar .container{min-height:58px}.hero h1{font-size:42px}.hero .sub{font-size:16px}.facts{grid-template-columns:1fr}.fact{border-right:0;border-bottom:1px solid var(--line)}.fact:last-child{border-bottom:0}section.section{padding:64px 0}.steps{grid-template-columns:1fr}.step{min-height:0}.result-head h3{font-size:25px}.takeaway{padding:25px 20px}.takeaway p{font-size:22px}.footer .container{display:block}}
     .nav{align-items:center}
-    .nav .extended-results{position:relative;isolation:isolate;display:inline-flex;align-items:center;gap:10px;min-height:49px;padding:6px 10px 6px 8px;border:1px solid #1e8d99;border-radius:13px;background:linear-gradient(110deg,#104985 0%,#09698d 58%,#087970 100%);color:#fff;box-shadow:0 4px 12px #0a557344,inset 0 1px 0 #ffffff32;white-space:nowrap;transition:transform .2s ease,box-shadow .2s ease}
-    .nav .extended-results::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;background:linear-gradient(112deg,transparent 20%,#c9fff02b 46%,transparent 72%);background-size:225% 100%;background-position:100% 0;transition:background-position .55s ease}
-    .nav .extended-results:hover{color:#fff;transform:translateY(-2px);box-shadow:0 8px 22px #0a557358}
-    .nav .extended-results:hover::before{background-position:0 0}
-    .nav .extended-results:focus-visible{outline:2px solid #086397;outline-offset:3px}
+    .extended-slot .extended-results{position:relative;isolation:isolate;display:inline-flex;align-items:center;gap:10px;min-height:49px;padding:6px 10px 6px 8px;border:1px solid #1e8d99;border-radius:13px;background:linear-gradient(110deg,#104985 0%,#09698d 58%,#087970 100%);color:#fff;box-shadow:0 4px 12px #0a557344,inset 0 1px 0 #ffffff32;white-space:nowrap;transition:transform .2s ease,box-shadow .2s ease}
+    .extended-slot .extended-results::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;background:linear-gradient(112deg,transparent 20%,#c9fff02b 46%,transparent 72%);background-size:225% 100%;background-position:100% 0;transition:background-position .55s ease}
+    .extended-slot .extended-results:hover{color:#fff;transform:translateY(-2px);box-shadow:0 8px 22px #0a557358}
+    .extended-slot .extended-results:hover::before{background-position:0 0}
+    .extended-slot .extended-results:focus-visible{outline:2px solid #086397;outline-offset:3px}
     .extended-results .results-icon{display:grid;place-items:center;width:32px;height:32px;flex:none;border:1px solid #ffffff45;border-radius:9px;background:#ffffff24;color:#f1fffc}
     .extended-results .results-icon svg{width:19px;height:19px}
     .extended-results .results-copy{display:grid;gap:3px;text-align:left;line-height:1}
@@ -37,9 +37,9 @@
     .extended-results .results-arrow{display:grid;place-items:center;width:25px;height:25px;margin-left:2px;flex:none;border-radius:50%;background:#ffffff29;transition:transform .2s ease}
     .extended-results .results-arrow svg{width:13px;height:13px}
     .extended-results:hover .results-arrow{transform:translate(2px,-2px)}
-    @media(max-width:560px){.nav .extended-results{min-height:44px;padding:5px 7px;gap:6px}.topbar .container{gap:10px}.extended-results .results-icon{width:27px;height:27px}.extended-results .results-icon svg{width:16px;height:16px}.extended-results .results-title{font-size:12px}.extended-results .results-subtitle{font-size:9px}.extended-results .results-arrow{width:20px;height:20px;margin-left:0}}
+    @media(max-width:560px){.extended-slot .extended-results{min-height:44px;padding:5px 7px;gap:6px}.topbar .container{gap:10px}.extended-results .results-icon{width:27px;height:27px}.extended-results .results-icon svg{width:16px;height:16px}.extended-results .results-title{font-size:12px}.extended-results .results-subtitle{font-size:9px}.extended-results .results-arrow{width:20px;height:20px;margin-left:0}}
     @media(max-width:390px){.nav a[href="#demo"]{display:none}.topbar .nav{gap:8px}}
-    @media(prefers-reduced-motion:reduce){.nav .extended-results,.nav .extended-results::before,.extended-results .results-arrow{transition:none}.nav .extended-results:hover,.extended-results:hover .results-arrow{transform:none}}
+    @media(prefers-reduced-motion:reduce){.extended-slot .extended-results,.extended-slot .extended-results::before,.extended-results .results-arrow{transition:none}.extended-slot .extended-results:hover,.extended-results:hover .results-arrow{transform:none}}
     .topbar .container{min-height:89px;padding-bottom:23px}
     .results-pointer{position:absolute;top:calc(100% + 2px);left:50%;width:112px;height:25px;transform:translateX(-50%);color:#087c82;pointer-events:none}
     .results-pointer svg{display:block;width:100%;height:100%;overflow:visible}
@@ -48,10 +48,25 @@
     @keyframes results-pointer-pulse{0%,70%,100%{opacity:.78}28%{opacity:1;filter:drop-shadow(0 0 2px #089f9f80)}}
     @media(max-width:560px){.topbar .container{min-height:82px;padding-bottom:22px}.results-pointer{width:94px;height:23px}}
     @media(prefers-reduced-motion:reduce){.results-pointer path{animation:none;opacity:1}}
+    .topbar .container{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;column-gap:18px;min-height:86px;padding-top:9px;padding-bottom:9px}
+    .topbar .brand{justify-self:start}
+    .topbar .nav{justify-self:center;gap:clamp(14px,2.6vw,30px);align-items:center}
+    .topbar .nav a:focus-visible{outline:2px solid var(--blue);outline-offset:4px;border-radius:2px}
+    .topbar .extended-slot{display:grid;justify-items:center;justify-self:end;gap:1px}
+    .extended-slot .results-pointer{position:static;transform:none;width:88px;height:18px;color:#087c82}
+    .extended-slot .extended-results{min-height:45px;padding-top:5px;padding-bottom:5px}
+    @media(max-width:700px){
+      .topbar .container{grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto;gap:6px 12px;min-height:82px;padding-top:9px;padding-bottom:9px}
+      .topbar .brand{grid-column:1;grid-row:1;align-self:end}
+      .topbar .nav{grid-column:1;grid-row:2;justify-self:start;align-self:start;gap:4px 10px;flex-wrap:wrap}
+      .topbar .nav a,.topbar .nav a:nth-child(-n+2),.topbar .nav a[href="#demo"]{display:inline-block;font-size:11px}
+      .topbar .extended-slot{grid-column:2;grid-row:1 / 3;align-self:center}
+    }
+    @media(max-width:360px){.topbar .container{padding-inline:12px;column-gap:8px}.topbar .nav{gap:4px 8px}}
   </style>
 </head>
 <body>
-<header class="topbar"><div class="container"><a class="brand" href="#top"><span class="brand-icon" aria-hidden="true">♫</span> MVA-SWI</a><nav class="nav" aria-label="Main navigation"><a href="#problem">Problem</a><a href="#method">Method</a><a href="#results">Results</a><a href="#demo">Demo</a><a class="extended-results" href="assets/extended_results.pdf" target="_blank" rel="noopener" aria-label="Extended Results, additional analyses (PDF, opens in a new tab)"><span class="results-pointer" aria-hidden="true"><svg viewBox="0 0 112 25" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21 Q23 12 35 5 M27 5h8l-3 7"/><path d="M56 22V4 M51 9l5-5 5 5"/><path d="M95 21 Q89 12 77 5 M85 5h-8l3 7"/></svg></span><span class="results-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5h7l4.5 4.5v12.5H6zM13 3.5V8h4.5M9 16v-2m3 2v-4m3 4v-6"/></svg></span><span class="results-copy"><span class="results-title">Extended Results</span><span class="results-subtitle">Click me · PDF</span></span><span class="results-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 12 4M5 4h7v7"/></svg></span></a></nav></div></header>
+<header class="topbar"><div class="container"><a class="brand" href="#top"><span class="brand-icon" aria-hidden="true">♫</span> MVA-SWI</a><nav class="nav" aria-label="Main navigation"><a href="#problem">Problem</a><a href="#method">Method</a><a href="#results">Results</a><a href="#demo">Demo</a></nav><div class="extended-slot"><a class="extended-results" href="assets/extended_results.pdf" target="_blank" rel="noopener" aria-label="Extended Results, additional analyses (PDF, opens in a new tab)"><span class="results-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5h7l4.5 4.5v12.5H6zM13 3.5V8h4.5M9 16v-2m3 2v-4m3 4v-6"/></svg></span><span class="results-copy"><span class="results-title">Extended Results</span><span class="results-subtitle">Click me · PDF</span></span><span class="results-arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 12 4M5 4h7v7"/></svg></span></a><span class="results-pointer" aria-hidden="true"><svg viewBox="0 0 112 25" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21 Q23 12 35 5 M27 5h8l-3 7"/><path d="M56 22V4 M51 9l5-5 5 5"/><path d="M95 21 Q89 12 77 5 M85 5h-8l3 7"/></svg></span></div></div></header>
 <main id="top">
   <section class="hero"><div class="container"><p class="eyebrow">Symbolic music · evaluation · work-level isolation</p><h1>Beyond <em>File-Level Splits</em><br>Rethinking Symbolic Music Evaluation via Multi-View Alignment</h1><p class="sub">Different MIDI files can contain the same musical work. We identify those relations, isolate training content at the work level, and measure how much prior exposure changes evaluation.</p><div class="actions"><a class="pill" href="https://github.com/kunbai05-nb/LeakageBench-MIDI" target="_blank" rel="noopener">↗ &nbsp; Code</a><a class="pill" href="#demo">▶ &nbsp; Watch demo</a></div><div id="demo" class="hero-demo"><div class="video-wrap"><video controls preload="metadata" playsinline aria-label="MVA-SWI detector application demonstration"><source src="assets/demo.mp4" type="video/mp4">Your browser does not support embedded video.</video></div></div></div></section>
   <div class="quickfacts"><div class="container facts"><div class="fact"><strong>30.16%</strong><span>relative NLL reduction for MIDI-GPT under same-work exposure</span></div><div class="fact"><strong>0.45%</strong><span>ATEPP MIDI-GPT deviation from label-isolated reference after MVA-SWI isolation</span></div><div class="fact"><strong>98.91%</strong><span>clean tokens retained in the ATEPP downstream study</span></div></div></div>
