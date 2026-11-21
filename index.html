@@ -75,6 +75,20 @@
       .extended-slot .pointer-left{right:calc(100% + 2px)}
       .extended-slot .pointer-right{left:calc(100% + 2px)}
     }
+    .extended-slot .extended-results{animation:results-button-glow 3.8s ease-in-out infinite}
+    .extended-slot .extended-results::before{background-image:linear-gradient(110deg,transparent 36%,#e9fffb3d 49%,transparent 62%);background-size:250% 100%;animation:results-button-shine 3.8s ease-in-out infinite}
+    .extended-slot .extended-results:hover,.extended-slot .extended-results:focus-visible{animation:none;transform:translateY(-2px);box-shadow:0 8px 24px #0a55735c,inset 0 1px 0 #ffffff42}
+    .extended-slot .extended-results:hover::before,.extended-slot .extended-results:focus-visible::before{animation:none;background-position:0 0}
+    .extended-slot .pointer-left,.extended-slot .pointer-right{animation:results-arrow-nudge 3.8s ease-in-out infinite}
+    .extended-slot .pointer-left{--nudge:3px}.extended-slot .pointer-right{--nudge:-3px}
+    .extended-slot .results-pointer path,.extended-slot .pointer-right path{animation:none;opacity:.9}
+    @keyframes results-button-glow{0%,62%,100%{box-shadow:0 4px 12px #0a557344,inset 0 1px 0 #ffffff32}27%{box-shadow:0 5px 19px #117b7966,inset 0 1px 0 #ffffff50}}
+    @keyframes results-button-shine{0%{background-position:100% 0}45%,100%{background-position:0 0}}
+    @keyframes results-arrow-nudge{0%,53%,100%{transform:translate(0,-50%)}27%{transform:translate(var(--nudge),-50%)}}
+    @media(prefers-reduced-motion:reduce){
+      .extended-slot .extended-results,.extended-slot .extended-results::before,.extended-slot .pointer-left,.extended-slot .pointer-right{animation:none}
+      .extended-slot .extended-results:hover,.extended-slot .extended-results:focus-visible{transform:none}
+    }
   </style>
 </head>
 <body>
